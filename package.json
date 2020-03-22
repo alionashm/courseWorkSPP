@@ -2,8 +2,10 @@
   "name": "backend",
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon app.js"
-   },
+    "dev:server": "nodemon index.js",
+    "dev:client": "npm start --prefix client",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\""
+  },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "dotenv": "^8.2.0",
@@ -17,6 +19,7 @@
     "passport-jwt": "^4.0.0"
   },
   "devDependencies": {
+    "concurrently": "^5.1.0",
     "nodemon": "^2.0.2"
   }
 }
