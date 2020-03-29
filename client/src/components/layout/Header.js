@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 import { logout } from '../../actions/auth'
+import ProfileImage from '../shared/ProfileImage'
 
 class Header extends React.Component {
 
@@ -19,8 +20,8 @@ class Header extends React.Component {
       links = (
         <li className="nav-item dropdown">
           <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i className="fa fa-user"></i>
-            Account
+            
+            <ProfileImage user={user} width={40}/>
           </a>
           <div className="dropdown-menu" aria-labelledby="navbarDropdown">
             <Link className="dropdown-item" to={'/user/' + user.id}>My Profile</Link>
@@ -62,15 +63,13 @@ class Header extends React.Component {
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
                 <Link className="nav-link" to="/">
-                  <i className="fa fa-globe"></i>
-                  All Posts
+                  Recipes
                 </Link>
               </li>
               {isAuthenticated && (
                 <li className="nav-item">
                   <Link className="nav-link" to="/feed">
-                    <i className="fa fa-rss"></i>
-                    Feed
+                    My recipe book
                   </Link>
                 </li>
               )}

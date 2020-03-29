@@ -8,7 +8,7 @@
 .fountainG {
   position: absolute;
   top: 0;
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(147,81,21);
   width: 28px;
   height: 28px;
   animation-name: bounce_fountainG;
@@ -120,59 +120,59 @@
 @keyframes bounce_fountainG {
   0% {
     transform: scale(1);
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(147,81,21);
   }
 
   100% {
     transform: scale(.3);
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(255,228,185);
   }
 }
 
 @-o-keyframes bounce_fountainG {
   0% {
     -o-transform: scale(1);
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(147,81,21);
   }
 
   100% {
     -o-transform: scale(.3);
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(255,228,185);
   }
 }
 
 @-ms-keyframes bounce_fountainG {
   0% {
     -ms-transform: scale(1);
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(147,81,21);
   }
 
   100% {
     -ms-transform: scale(.3);
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(255,228,185);
   }
 }
 
 @-webkit-keyframes bounce_fountainG {
   0% {
     -webkit-transform: scale(1);
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(147,81,21);
   }
 
   100% {
     -webkit-transform: scale(.3);
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(255,228,185);
   }
 }
 
 @-moz-keyframes bounce_fountainG {
   0% {
     -moz-transform: scale(1);
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(147,81,21);
   }
 
   100% {
     -moz-transform: scale(.3);
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(255,228,185);
   }
 }

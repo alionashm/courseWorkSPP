@@ -26,7 +26,7 @@ class Like extends React.Component {
         href="#" role="button"
         className="card-link" onClick={this.onLikeClick}
       >
-        <i className="fa fa-heart"></i> {likes.length}
+        <i className="fa fa-thumbs-up"></i> {likes.length}
       </a>
     )
   }

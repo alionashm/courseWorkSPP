@@ -27,13 +27,12 @@ class PostForm extends React.Component {
           <form onSubmit={this.onSubmit}>
             <div className="form-group">
               <Quill
-                placeholder="What's up?"
+                placeholder="Share your recipe!"
                 theme="snow"
                 modules={{
                   toolbar: [
                     ['bold', 'italic', 'underline', 'strike'],
-                    ['link', 'image', 'video'],
-                    ['clean']
+                    ['link', 'image', 'video']
                   ]
                 }}
                 value={this.state.body}

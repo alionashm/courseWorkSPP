@@ -1,6 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Righteous');
 @import url('https://fonts.googleapis.com/css?family=Acme');
 
+body {
+  background-image: url('./bakery.jpg');
+  background-attachment: fixed
+}
+
+.navbar {
+  background-color: rgba(33,37,41,0.89) !important
+}
 .navbar-brand {
   font-family: 'Righteous', cursive;
 }
@@ -95,6 +103,17 @@ p {
   .navbar-icon-top.navbar-expand-md .navbar-nav .nav-link > .fa > .badge {
     top: -7px;
   }
+}
+
+.profile-row {
+  background-color:white;
+  position: absolute !important;
+  z-index: 999999 !important;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  padding-top: 5px;
+  margin-left: 62%;
+  width: 250px
 }
 
 @media (min-width: 992px) {

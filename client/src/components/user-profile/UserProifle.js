@@ -25,22 +25,19 @@ class UserProfile extends React.Component {
     const { user: { user, isLoading }, auth } = this.props
     return !isLoading && user !== null ? (
       <React.Fragment>
-        <div className="row mt-5">
-          <div className="col-md-6 mx-auto">
-            <div className="row">
-              <div className="col-8">
+            <div className="profile-row">
+              <div style={{paddingLeft: "30%"}} className="col-4 text-center">
+                <ProfileImage user={user} width={100}/>
+              </div>
+              <div style={{paddingLeft:"7px"}}>
                 <h2 className="profile-username">{user.name}</h2>
-                <p>
+                <p style={{fontSize:"12px"}}>
                   <strong>Registered: </strong>
                   {new Date(user.createdDate).toDateString()}
                 </p>
               </div>
-              <div className="col-4 text-center">
-                <ProfileImage user={user} />
-              </div>
+              
             </div>
-          </div>
-        </div>
         {!(auth.user.id === user._id) && (
           <div className="row mt-4">
             <div className="col-md-12 text-center">
