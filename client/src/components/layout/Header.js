@@ -23,7 +23,7 @@ class Header extends React.Component {
             
             <ProfileImage user={user} width={40}/>
           </a>
-          <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+          <div style={{zIndex:"1000000"}}className="dropdown-menu" aria-labelledby="navbarDropdown">
             <Link className="dropdown-item" to={'/user/' + user.id}>My Profile</Link>
             <div className="dropdown-divider"></div>
             <a

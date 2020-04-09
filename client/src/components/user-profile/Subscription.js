@@ -28,14 +28,23 @@ class Subscription extends React.Component {
 
   render() {
     const { subscriptions, isLoading } = this.props.subscription
-    return !isLoading && (
-      <button
-        className="btn btn-dark btn-block subscribe-btn"
-        onClick={this.onSubClick}
-      >
-        Subscribe | <i className="fa fa-users"></i> {subscriptions.length}
-      </button>
-    )
+    if (!this.props.subLabel){
+      return !isLoading && (
+        <button
+          className="btn btn-dark btn-block subscribe-btn subscrBtn"
+          onClick={this.onSubClick}
+        >
+          Subscribe | <i className="fa fa-users"></i> {subscriptions.length}
+        </button>
+      )
+    } else {
+      return !isLoading && (
+        <p className="subscrBtn"
+        >
+          Subscribers | <i className="fa fa-users"></i> {subscriptions.length}
+        </p>
+      )
+    }
   }
 }
 

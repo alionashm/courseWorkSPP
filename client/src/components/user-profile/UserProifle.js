@@ -42,13 +42,25 @@ class UserProfile extends React.Component {
           <div className="row mt-4">
             <div className="col-md-12 text-center">
               <div className="col-4 mx-auto">
-                <Subscription userId={user._id} />
+                <Subscription userId={user._id} subLabel={false}/>
+              </div>
+            </div>
+          </div>
+        )}
+        {(auth.user.id === user._id) && (
+          <div className="row mt-4">
+            <div className="col-md-12 text-center">
+              <div className="col-4 mx-auto">
+                <Subscription userId={user._id} subLabel={true}/>
               </div>
             </div>
           </div>
         )}
         <div className="row mt-4">
           <div className="col-md-6 mx-auto">
+            {console.log("auth",auth.user.id)}
+            {console.log("user",user._id)}
+
             {auth.user.id === user._id && <PostForm />}
             <Posts queryParams={{ user: user._id }} />
           </div>

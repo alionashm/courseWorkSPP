@@ -11,15 +11,27 @@ import Loader from './Loader'
 
 const LIMIT = 10
 
+let postsOnPage = []
+
 class Posts extends React.Component {
 
   constructor() {
     super()
-    this.state = { activePage: 1 }
+    this.state = { 
+      activePage: 1,
+      search:""
+    }
+    this.handleChange = this.handleChange.bind(this)
   }
 
   componentDidMount() {
     this.props.getAll(this.getQueryParams())
+  }
+
+  componentDidUpdate() {
+    if(this.state.postsOnPage != this.props.post) {
+      this.setState({postsOnPage: this.props.post})
+    }
   }
 
   onPageChange = (activePage) => {
@@ -38,17 +50,36 @@ class Posts extends React.Component {
     )
   }
 
+  handleChange(e) {
+    this.setState({search: e.target.value})     
+  }
+
   render() {
     const { isLoading, posts, totalCount } = this.props.post
+    let currentRec = []
+    let newRec = []
+    if (this.state.search !== ""){
+      currentRec = posts;
+
+      newRec = currentRec.filter(record => {
+        const lc = record.body.toLowerCase();
+        const filter = this.state.search.toLowerCase();
+        return lc.includes(filter);
+      });
+    } else {
+      newRec = posts;
+    }
+    postsOnPage = newRec
     return (
       <React.Fragment>
+        <input type="text" className="input" onChange={this.handleChange} placeholder="Search by last name..." />
         {isLoading && <Loader />}
         {!isLoading && totalCount === 0 && (
           <div className="text-center">
             <h2>There is nothing</h2>
           </div>
         )}
-        {posts.map((p) => <Post post={p} key={p._id} TYPE={UPDATE_POSTS} />)}
+        {postsOnPage.map((p) => <Post post={p} key={p._id} TYPE={UPDATE_POSTS} />)}
         {!isLoading && totalCount > posts.length && (
           <Pagination
             activePage={this.state.activePage}

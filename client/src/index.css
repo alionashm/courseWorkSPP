@@ -3,7 +3,8 @@
 
 body {
   background-image: url('./bakery.jpg');
-  background-attachment: fixed
+  background-attachment: fixed;
+  background-size: 100%; 
 }
 
 .navbar {
@@ -112,10 +113,19 @@ p {
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
   padding-top: 5px;
-  margin-left: 62%;
+  margin-top: 23px;
+  margin-left: 838px;
+  height: 220px;
   width: 250px
 }
 
+.subscrBtn {
+  position: absolute !important;
+  z-index: 999999 !important;
+  margin-top: 203px;
+  margin-left: 123.5%;
+  width: 240px
+}
 @media (min-width: 992px) {
   .navbar-icon-top.navbar-expand-lg .navbar-nav .nav-link {
     text-align: center;
