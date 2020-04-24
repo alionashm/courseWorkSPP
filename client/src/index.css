@@ -126,6 +126,18 @@ p {
   margin-left: 123.5%;
   width: 240px
 }
+
+.searchInput {
+  display:flex; 
+  right: 32.2%;
+  top: 30px;
+  height: 27px;
+  position: fixed;
+  justify-content: left;
+  border-radius: 5px;
+  padding-left:2px;
+  border: none
+}
 @media (min-width: 992px) {
   .navbar-icon-top.navbar-expand-lg .navbar-nav .nav-link {
     text-align: center;

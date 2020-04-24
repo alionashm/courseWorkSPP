@@ -18,7 +18,6 @@ class Post extends React.Component {
 
   render() {
     const { post, auth, TYPE } = this.props
-    console.log("!!!!!!!!!!!!!!!!!!!!!", post)
     return (
       <div className="card mb-4">
         

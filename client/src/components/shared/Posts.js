@@ -72,7 +72,7 @@ class Posts extends React.Component {
     postsOnPage = newRec
     return (
       <React.Fragment>
-        <input type="text" className="input" onChange={this.handleChange} placeholder="Search by last name..." />
+        <input type="text" className="searchInput" onChange={this.handleChange} placeholder="Search on this page..." />
         {isLoading && <Loader />}
         {!isLoading && totalCount === 0 && (
           <div className="text-center">
