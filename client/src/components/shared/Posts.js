@@ -19,9 +19,12 @@ class Posts extends React.Component {
     super()
     this.state = { 
       activePage: 1,
-      search:""
+      search:"",
+      searchWidth: 0,
+      clicked: false
     }
-    this.handleChange = this.handleChange.bind(this)
+    this.handleChange = this.handleChange.bind(this);
+    this.handleClick = this.handleClick.bind(this)
   }
 
   componentDidMount() {
@@ -54,6 +57,14 @@ class Posts extends React.Component {
     this.setState({search: e.target.value})     
   }
 
+  handleClick(){
+    if(this.state.clicked) {
+      this.setState({searchWidth: 0, clicked: false})
+    } else {
+      this.setState({searchWidth: 228, clicked: true})
+    }
+  }
+
   render() {
     const { isLoading, posts, totalCount } = this.props.post
     let currentRec = []
@@ -72,7 +83,8 @@ class Posts extends React.Component {
     postsOnPage = newRec
     return (
       <React.Fragment>
-        <input type="text" className="searchInput" onChange={this.handleChange} placeholder="Search on this page..." />
+        <div className="search" onClick={this.handleClick}></div>
+        <input type="text" style={{width: this.state.searchWidth}} className="searchInput" onChange={this.handleChange} placeholder="Search on this page..." />
         {isLoading && <Loader />}
         {!isLoading && totalCount === 0 && (
           <div className="text-center">
