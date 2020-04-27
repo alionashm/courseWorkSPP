@@ -88,7 +88,7 @@ class Posts extends React.Component {
         {isLoading && <Loader />}
         {!isLoading && totalCount === 0 && (
           <div className="text-center">
-            <h2>There is nothing</h2>
+            <h2 className="myfooter">There is nothing</h2>
           </div>
         )}
         {postsOnPage.map((p) => <Post post={p} key={p._id} TYPE={UPDATE_POSTS} />)}

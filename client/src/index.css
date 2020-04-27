@@ -138,7 +138,8 @@ p {
   width: 50px;
   position: fixed;
   border-radius: 35px;
-  border: none
+  border: none;
+  cursor: pointer;
 }
 
 .searchInput {
@@ -153,6 +154,10 @@ p {
   padding-left:50px;
   border: none;
   transition: width 1s cubic-bezier(0, 0, 1, 1) 500ms;
+}
+
+.myfooter{
+  color:#ffdca4
 }
 @media (min-width: 992px) {
   .navbar-icon-top.navbar-expand-lg .navbar-nav .nav-link {
